@@ -6,24 +6,42 @@ public class Counter {
     private static String path = "counter.txt";
     //private static int count;
 
-    public static int add() throws IOException{
-        return 2;
+//    public static int add() throws IOException{
+//        return 2;
+//    }
+
+    public static int getCount() throws IOException{
+        int result = -1;
+        try {
+            File file = new File(path);
+            FileReader fr = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fr);
+            String info = reader.readLine();
+            result = Integer.parseInt(info);
+            reader.close();
+            fr.close();
+        } catch (Exception e) {
+            throw new IOException("Не удалось прочитать файл");
+        }
+        return result;
     }
 
-//    public static int getCount() throws IOException {
-//        try (FileReader reader = new FileReader(new File(path))){
-//            count = reader.read();
-//        } catch (IOException e) {
-//            throw new IOException(e);
-//        }
-//        return count;
-//    }
-//
-//    private void add() throws IOException {
+
+
+    public static void add() throws IOException {
+        int newCount = getCount() + 1;
+        String stringCount = "" + newCount;
+        try (FileWriter writer = new FileWriter(path, false)) {
+                writer.append(stringCount);
+        } catch (IOException ex) {
+            throw new IOException(ex);
+        }
 //        try (FileWriter writer = new FileWriter(path, false)){
-//            writer.write(count);
+//            writer.append(newCount);
 //        } catch (IOException e) {
 //            throw new IOException(e);
 //        }
-//    }
+   }
+
+
 }

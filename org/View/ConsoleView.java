@@ -8,7 +8,7 @@ public class ConsoleView implements View{
         System.out.println(message);
         Scanner scanner = new Scanner(System.in);
         String info = scanner.nextLine();
-        scanner.close();
+        //scanner.close();
         return info;
     }
 
@@ -25,12 +25,13 @@ public class ConsoleView implements View{
             System.out.println("Какое животное нужно добавить? " +
                     "Выберите номер варианта: \n 1 Cat \n 2 Dog \n " +
                     "3 Hamster \n 4 Horse \n 5 Camel \n 6 Donkey");
-            info = scanner.nextInt();
+            info = Integer.parseInt(scanner.nextLine());
+            System.out.println("Выполняется");
             if (info >= 1 && info <= 6) {
                 flag = false;
             }
         }
-        scanner.close();
         return info;
     }
+
 }

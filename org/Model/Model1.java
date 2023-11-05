@@ -7,23 +7,13 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class Model1 implements Model {
-    //private String[] listOfSpecies = {"Cat", "Dog", "Hamster", "Horse", "Camel", "Donkey"};
-
-//    public HF addCat(String name){
-//        HF cat = null;
-//        try {
-//            cat = new Cat(name);
-//        } catch (IOException e) {
-//            e.printStackTrace(); ;
-//        }
-//        return cat;
-//    }
 
     @Override
     public HF addNewAnimal(String name, int specie)throws IOException{
         int id = -1;
         try {
-            id = Counter.add();
+            Counter.add();
+            id = Counter.getCount();
         } catch (IOException e){
             throw new IOException(e);
         }
