@@ -33,4 +33,14 @@ public class ConsoleView implements View{
         return info;
     }
 
+    public String getBirthDate(String format){
+        System.out.printf(" Укажите дату рождения животного в формате %s . \n Год: ", format);
+        Scanner scanner = new Scanner(System.in);
+        String info = scanner.nextLine();
+        System.out.println("Месяц: ");
+        info = info + "-" + scanner.nextLine();
+        System.out.println("День: ");
+        info = info + "-" + scanner.nextLine();
+        return info;
+    }
 }
