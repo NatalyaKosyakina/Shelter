@@ -6,12 +6,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class Horse extends PackAnimal {
-    private int id;
-    private String name;
-    private String specie;
-    private List<String> comands;
-    protected Horse(String name) throws IOException {
-        super(name);
-        this.specie = "Horse";
+    private String specie = "Horse";
+
+    public Horse(int id, String name){
+        super(id, name);
     }
 }

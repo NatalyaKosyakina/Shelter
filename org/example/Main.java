@@ -1,18 +1,22 @@
 package org.example;
 
 
-import org.example.AnimalClasses.Cat;
-
-import java.io.IOException;
+import org.Model.Model1;
+import org.View.ConsoleView;
 
 public class Main {
  public static void main(String[] args) {
-  Cat cat = null;
-  try {
-   cat = new Cat("Barsik");
-  } catch (IOException e) {
-   e.printStackTrace(); ;
-  }
-  System.out.println(cat);
+  Presenter run = new Presenter(new ConsoleView(), new Model1());
+ }
+
+
+ public void addNewAnimal(){
+
+  //Запросить у пользователя вид животного (на выбор из нескольких вариантов)
+
+  //Запросить имя (Ввод строки)
+
+  //Вызвать запрос ID, создать животное выбранного вида, присвоить ему id, вид и имя.
+
  }
 }
