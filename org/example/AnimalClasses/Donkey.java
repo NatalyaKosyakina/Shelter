@@ -11,4 +11,8 @@ public class Donkey extends PackAnimal {
     public Donkey(int id, String name) {
         super(id, name);
     }
+
+    public String getSpecie() {
+        return specie;
+    }
 }

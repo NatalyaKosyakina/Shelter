@@ -11,4 +11,8 @@ public class Hamster extends Pet {
     public Hamster(int id, String name){
         super(id, name);
     }
+
+    public String getSpecie() {
+        return specie;
+    }
 }

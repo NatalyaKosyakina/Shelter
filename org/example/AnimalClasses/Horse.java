@@ -11,4 +11,8 @@ public class Horse extends PackAnimal {
     public Horse(int id, String name){
         super(id, name);
     }
+
+    public String getSpecie() {
+        return specie;
+    }
 }

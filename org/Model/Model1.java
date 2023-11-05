@@ -3,20 +3,10 @@ package org.Model;
 import org.example.AnimalClasses.*;
 import org.example.HF;
 
-import java.io.IOException;
-import java.util.HashMap;
-
 public class Model1 implements Model {
 
     @Override
-    public HF addNewAnimal(String name, int specie)throws IOException{
-        int id = -1;
-        try {
-            Counter.add();
-            id = Counter.getCount();
-        } catch (IOException e){
-            throw new IOException(e);
-        }
+    public HF addNewAnimal(int id, String name, int specie){
         HF animal = null;
         if (id != -1) {
             switch (specie){
@@ -37,5 +27,9 @@ public class Model1 implements Model {
             }
         }
         return animal;
+    }
+
+    public void addCommand(HF animal, String command){
+        animal.addComand(command);
     }
 }

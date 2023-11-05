@@ -12,4 +12,7 @@ public class Camel extends PackAnimal {
         super(id, name);
     }
 
+    public String getSpecie() {
+        return specie;
+    }
 }

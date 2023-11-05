@@ -1,8 +1,5 @@
 package org.example;
 
-import org.Model.Counter;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,7 +28,25 @@ public class HF {
     }
     @Override
     public String toString() {
+        String type1 = gettype();
+        String specie2 = getSpecie();
         return id + " " + name + ": "
-                + type + ", " + specie + ", команды: " + comands + ". \n";
+                + type1 + ", " + specie2 + ", команды: " + comands + ". \n";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getSpecie() {
+        return specie;
+    }
+
+    public String gettype() {
+        return type;
     }
 }

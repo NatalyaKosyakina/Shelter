@@ -4,11 +4,6 @@ import java.io.*;
 
 public class Counter {
     private static String path = "counter.txt";
-    //private static int count;
-
-//    public static int add() throws IOException{
-//        return 2;
-//    }
 
     public static int getCount() throws IOException{
         int result = -1;
@@ -26,8 +21,6 @@ public class Counter {
         return result;
     }
 
-
-
     public static void add() throws IOException {
         int newCount = getCount() + 1;
         String stringCount = "" + newCount;
@@ -36,12 +29,5 @@ public class Counter {
         } catch (IOException ex) {
             throw new IOException(ex);
         }
-//        try (FileWriter writer = new FileWriter(path, false)){
-//            writer.append(newCount);
-//        } catch (IOException e) {
-//            throw new IOException(e);
-//        }
    }
-
-
 }

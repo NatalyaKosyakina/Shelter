@@ -9,4 +9,7 @@ public class PackAnimal extends HF {
     protected PackAnimal(int id, String name){
         super(id, name);
     }
+    public String gettype() {
+        return type;
+    }
 }

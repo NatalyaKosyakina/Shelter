@@ -7,9 +7,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class Cat extends Pet {
-    int id;
     private String specie = "Cat";
     public Cat(int id, String name){
         super(id, name);
+    }
+
+    @Override
+    public String getSpecie() {
+        return specie;
     }
 }

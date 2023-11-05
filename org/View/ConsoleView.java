@@ -8,7 +8,6 @@ public class ConsoleView implements View{
         System.out.println(message);
         Scanner scanner = new Scanner(System.in);
         String info = scanner.nextLine();
-        //scanner.close();
         return info;
     }
 

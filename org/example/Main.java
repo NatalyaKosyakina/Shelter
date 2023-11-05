@@ -1,16 +1,13 @@
 package org.example;
 
-
-import org.Model.Counter;
 import org.Model.Model1;
 import org.View.ConsoleView;
 
-import java.io.IOException;
 
 public class Main {
  public static void main(String[] args) {
   Presenter run = new Presenter(new ConsoleView(), new Model1());
-  run.addNewAnimal();
+ run.addNewAnimal();
  }
 
 

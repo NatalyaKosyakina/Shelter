@@ -11,4 +11,8 @@ public class Dog extends Pet {
     public Dog(int id, String name){
         super(id, name);
     }
+
+    public String getSpecie() {
+        return specie;
+    }
 }
