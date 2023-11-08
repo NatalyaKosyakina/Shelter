@@ -9,12 +9,14 @@ public class Counter {
         int result = -1;
         try {
             File file = new File(path);
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String info = reader.readLine();
-            result = Integer.parseInt(info);
-            reader.close();
-            fr.close();
+            if (!file.createNewFile()) {
+                FileReader fr = new FileReader(file);
+                BufferedReader reader = new BufferedReader(fr);
+                String info = reader.readLine();
+                result = Integer.parseInt(info);
+                reader.close();
+                fr.close();
+            }
         } catch (Exception e) {
             throw new IOException("Не удалось прочитать файл");
         }
