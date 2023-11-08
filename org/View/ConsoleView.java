@@ -21,11 +21,14 @@ public class ConsoleView implements View{
         int info = -1;
         Scanner scanner = new Scanner(System.in);
         while (flag) {
-            System.out.println("Какое животное нужно добавить? " +
-                    "Выберите номер варианта: \n 1 Cat \n 2 Dog \n " +
-                    "3 Hamster \n 4 Horse \n 5 Camel \n 6 Donkey");
-            info = Integer.parseInt(scanner.nextLine());
-            System.out.println("Выполняется");
+            System.out.println("Вид животного (укажите номер): " +
+                    " 1 Cat \n 2 Dog \n 3 Hamster \n 4 Horse \n 5 Camel \n 6 Donkey");
+            try {
+                String input = scanner.nextLine();
+                info = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Неправильный ввод данных");
+            }
             if (info >= 1 && info <= 6) {
                 flag = false;
             }
