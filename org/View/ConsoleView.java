@@ -21,7 +21,7 @@ public class ConsoleView implements View{
         int info = -1;
         Scanner scanner = new Scanner(System.in);
         while (flag) {
-            System.out.println("Вид животного (укажите номер): " +
+            System.out.println("Вид животного (укажите номер): \n " +
                     " 1 Cat \n 2 Dog \n 3 Hamster \n 4 Horse \n 5 Camel \n 6 Donkey");
             try {
                 String input = scanner.nextLine();

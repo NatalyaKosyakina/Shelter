@@ -20,15 +20,17 @@ public class FileWork {
         StringBuilder animals = new StringBuilder();
         try {
             File file = new File(base);
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String temp = reader.readLine();
-            while (temp != null) {
-                animals.append(temp).append("\n");
-                temp = reader.readLine();
+            if (!file.createNewFile()) {
+                FileReader fr = new FileReader(file);
+                BufferedReader reader = new BufferedReader(fr);
+                String temp = reader.readLine();
+                while (temp != null) {
+                    animals.append(temp).append("\n");
+                    temp = reader.readLine();
+                }
+                reader.close();
+                fr.close();
             }
-            reader.close();
-            fr.close();
         } catch (IOException e) {
             throw new IOException(e);
         }
@@ -39,17 +41,19 @@ public class FileWork {
         List<String> result = new ArrayList<>();
         try {
             File file = new File(base);
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String animal = reader.readLine();
-            while (animal != null) {
-                if (animal.contains(name) && animal.contains(specie)) {
-                    result.add(animal);
+            if (!file.createNewFile()) {
+                FileReader fr = new FileReader(file);
+                BufferedReader reader = new BufferedReader(fr);
+                String animal = reader.readLine();
+                while (animal != null) {
+                    if (animal.contains(name) && animal.contains(specie)) {
+                        result.add(animal);
+                    }
+                    animal = reader.readLine();
                 }
-                animal = reader.readLine();
+                reader.close();
+                fr.close();
             }
-            reader.close();
-            fr.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -60,17 +64,19 @@ public class FileWork {
         List<String> result = new ArrayList<>();
         try {
             File file = new File(base);
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String animal = reader.readLine();
-            while (animal != null) {
-                if (animal.contains(birthDate)) {
-                    result.add(animal);
+            if (!file.createNewFile()){
+                FileReader fr = new FileReader(file);
+                BufferedReader reader = new BufferedReader(fr);
+                String animal = reader.readLine();
+                while (animal != null) {
+                    if (animal.contains(birthDate)) {
+                        result.add(animal);
+                    }
+                    animal = reader.readLine();
                 }
-                animal = reader.readLine();
+                reader.close();
+                fr.close();
             }
-            reader.close();
-            fr.close();
         } catch (IOException e) {
             throw new IOException("Не удалось открыть файл");
         }
